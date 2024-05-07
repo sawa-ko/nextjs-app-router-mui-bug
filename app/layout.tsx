@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
+import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
+import theme from "../components/theme";
+
+import CssBaseline from "@mui/material/CssBaseline";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +19,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+          <CssVarsProvider theme={theme}>
+            <CssBaseline enableColorScheme={true} />
+            {children}
+          </CssVarsProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
