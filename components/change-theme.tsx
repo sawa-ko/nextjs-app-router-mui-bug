@@ -14,7 +14,7 @@ export default function ChangeTheme() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) return <div></div>;
 
   return (
     <>
