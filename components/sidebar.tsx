@@ -89,7 +89,7 @@ export default function Sidebar() {
             <Stack>
               <Typography>User</Typography>
               <Typography maxWidth={200} noWrap={true}>
-                user@sercargologistics.com
+                user@test.com
               </Typography>
             </Stack>
             <IconButton color="error">
